@@ -8,7 +8,7 @@
     ></v-carousel-item>
   </v-carousel>
     <div class="google-icon center">
-      <a href="https://desarollo.planestic.udistrital.edu.co/api/google">
+      <a href="https://desarrollo.planestic.udistrital.edu.co/api/google">
         <button class="btn btn-light">
           <img
             class="google-icon center"
@@ -19,7 +19,7 @@
         
         <!--href="http://localhost:3000/google"-->
       </a>
-      <a href="https://desarollo.planestic.udistrital.edu.co/api/microsoft">
+      <a href="https://desarrollo.planestic.udistrital.edu.co/api/microsoft">
         <button class="btn btn-light" disabled>
           <img
             class="ms-icon center"

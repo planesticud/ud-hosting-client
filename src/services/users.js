@@ -1,5 +1,5 @@
 import axios from "axios";
-const repositoryUrl = 'https://desarollo.planestic.udistrital.edu.co/api'
+const repositoryUrl = 'https://desarrollo.planestic.udistrital.edu.co/api'
 
 class UsersService {
 

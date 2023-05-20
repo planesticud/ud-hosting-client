@@ -67,7 +67,7 @@
           <a
             class="pull-right"
             v-else
-            href="https://desarollo.planestic.udistrital.edu.co/api/google"
+            href="https://desarrollo.planestic.udistrital.edu.co/api/google"
           >
           
             Iniciar sesión
