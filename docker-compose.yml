@@ -1,0 +1,22 @@
+version: '3'
+networks:
+ dev_planestic:
+
+services:
+  ud-pages-client:
+     build: .
+     container_name: ud-pages-client
+     restart: on-failure
+     env_file:
+        - .env
+     networks:
+        - dev_planestic
+     labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ud-pages-client.rule=Host(`desarollo.planestic.udistrital.edu.co`)"
+      - "traefik.http.routers.ud-pages-client.tls=true"
+      - "traefik.http.routers.ud-pages-client.tls.certresolver=le"
+      - "traefik.http.services.ud-pages-client.loadbalancer.server.port=80"           
+networks:
+  dev_planestic:
+    external: true
