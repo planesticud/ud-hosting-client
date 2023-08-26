@@ -51,6 +51,26 @@ const router = new Router({
       name: "login",
       component: () => import("./components/Login")
     },
+    {
+      path: "/vulhub",
+      name: "vulhub",
+      component: () => import("./components/vulhub/AddVulHub")
+    },
+    {
+      path: "/vulhub/add",
+      name: "addvulhub",
+      component: () => import("./components/vulhub/AddVulHub")
+    },
+    {
+      path: "/vulhub/edit/:id",
+      name: "editvulhub",
+      component: () => import("./components/vulhub/EditVulHub")
+    },
+    {
+      path: "/vulhub/detail/:id",
+      name: "detailvulhub",
+      component: () => import("./components/vulhub/DetailVulHub")
+    },
   ]
 });
 router.beforeEach((to, from, next) => {

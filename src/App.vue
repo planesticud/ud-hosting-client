@@ -182,6 +182,7 @@ export default {
       this.buttons = [
         { text: "Inicio", route: "/home" },
         { text: "Paginas", route: "/pages" },
+        { text: "Vulhub", route: "/vulhub" },
       ];
     }
     this.image();

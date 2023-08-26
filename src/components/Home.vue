@@ -88,6 +88,12 @@ export default {
           route: "/pages/add",
           description: "Creación de recursos",
           icon: "mdi-book-open-page-variant",
+        },
+        {
+          text: "Crear vulHub",
+          route: "/vulhub",
+          description: "Creación de entornos vulnerables",
+          icon: "mdi-wrench",
         }
       ];
     
