@@ -72,22 +72,10 @@ export default {
    
       this.buttons = [
         {
-          text: "Inicio",
-          route: "/home",
-          description: "Inicio hosting",
-          icon: "mdi-home",
-        },
-        {
           text: "Paginas",
           route: "/pages",
           description: "Administración de recursos",
           icon: "mdi-file",
-        },
-        {
-          text: "Crear pagina",
-          route: "/pages/add",
-          description: "Creación de recursos",
-          icon: "mdi-book-open-page-variant",
         },
         {
           text: "Crear vulHub",

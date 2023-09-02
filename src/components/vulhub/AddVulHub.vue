@@ -31,7 +31,7 @@
           <h2>Nuevo entorno vulnerable</h2>
         </v-card-title>
         <v-card-text>
-          <v-select v-model="model.env" :items="buttons" item-text="text" item-value="value" label="entorno" ></v-select>
+          <v-select v-model="model.env" :items="buttons" item-text="text" item-value="value" label="entorno"></v-select>
 
           <v-select v-model="model.type" :items="types" :rules="[v => !!v || 'debe escoger un entorno']" label="Entorno"
             required></v-select>
@@ -44,9 +44,18 @@
             <p></p>
             &nbsp; &nbsp;
             <v-card v-if="result.state" flat>
-              <a :href="result.url" target="_blank">
-                {{ result.text }}
-              </a>
+              <h2>Siga las instrucciones:</h2>
+              <h3>
+                <a :href="result.url" target="_blank">
+                  {{ result.text }}
+                </a>
+              </h3>
+              <p>&nbsp;</p>
+              <h3>
+                <a :href="result.url2" target="_blank">
+                  {{ result.text2 }}
+                </a>
+              </h3>
             </v-card>
           </div>
         </v-card-text>
@@ -84,7 +93,7 @@ export default {
       if (this.model.type == "LOCAL") {
         let url = `https://github.com/planesticud/vulhub/blob/master/${this.model.env.toLowerCase()}`
         this.result = {
-          text: "sigue las instrucciones del enlace",
+          text: "1. abre el enlace",
           color: "green lighten-2",
           state: true,
           url: url,
@@ -93,11 +102,15 @@ export default {
       } else {
         VulhubService.createVulhub({ first_name: this.model.first_name, last_name: this.model.last_name, email: this.model.email, name: this.model.name, env: this.model.env, type: this.model.type, })
           .then(({ data }) => {
+            let url2 = `https://github.com/planesticud/vulhub/blob/master/${this.model.env.toLowerCase()}`
+
             this.result = {
-              text: data.info,
+              text: "1. abre tu entorno vulnerable ",
+              url: data.ok,
+              text2: "1. abre el enlace con las instrucciones para atacar el entorno",
+              url2: url2,
               color: "green lighten-2",
               state: true,
-              url: `https://pages.planestic.udistrital.edu.co/${this.model.page_name}`,
             };
 
 
@@ -125,7 +138,7 @@ export default {
       this.buttons = [
         {
           text: "Wordpress",
-          value: "wrdpress",
+          value: "wordpress",
           description: "WordPress es un sistema de gestión de contenidos",
           icon: "mdi-wordpress",
           disabled: 0,
