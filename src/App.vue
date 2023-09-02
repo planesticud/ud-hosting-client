@@ -59,15 +59,13 @@
         </div>
         <div class="pull-right">
           <div class="pull-right" v-if="isLogin">
-            <v-avatar class="pull-right">
-              <img :src="url_image" :alt="name" />
-            </v-avatar>
+            <h3>{{ name }}</h3>
             <a @click="logout"> Cerrar sesión </a>
           </div>
           <a
             class="pull-right"
             v-else
-            href="https://desarrollo.planestic.udistrital.edu.co/api/google"
+            href="https://desarrollo.planestic.udistrital.edu.co/api/microsoft"
           >
           
             Iniciar sesión
@@ -111,7 +109,7 @@ export default {
   name: "app",
   data() {
     return {
-      title: "Hosting UD",
+      title: "Planestic-UD",
       isLogin: false,
       url_image: "",
       buttons: [],
@@ -135,7 +133,7 @@ export default {
   },
   methods: {
     image() {
-      if (localStorage.url_image) {
+      if (localStorage.name) {
         this.isLogin = true;
         this.url_image = localStorage.url_image;
       } else {
@@ -158,7 +156,10 @@ export default {
       }
     },
     logout() {
-      localStorage.removeItem("token")
+      
+      let theme = localStorage.theme
+      localStorage.clear();
+      localStorage.theme = theme
       this.$router.push({ name: "login" });
       location.reload();
     },
