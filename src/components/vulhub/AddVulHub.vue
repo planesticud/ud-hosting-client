@@ -189,6 +189,34 @@ export default {
           description: "MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual: Licencia pública general/Licencia comercial por Oracle Corporation y está considerada como la base de datos de código abierto más popular del mundo",
           icon: "mdi-database",
           disabled: 0,
+        },
+        {
+          text: "docker",
+          value: "docker",
+          description: "Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.",
+          icon: "mdi-docker",
+          disabled: 0,
+        },
+        {
+          text: "redis",
+          value: "redis",
+          description: "Redis es un motor de base de datos en memoria, basado en el almacenamiento en tablas de hashes (clave/valor) pero que opcionalmente puede ser usada como una base de datos durable o persistente.",
+          icon: "mdi-cached",
+          disabled: 0,
+        },
+        {
+          text: "flask",
+          value: "flask",
+          description: "Flask es un framework minimalista escrito en Python que permite crear aplicaciones web rápidamente y con un mínimo número de líneas de código.",
+          icon: "mdi-api",
+          disabled: 0,
+        },
+        {
+          text: "postgres",
+          value: "postgres",
+          description: "PostgreSQL, también llamado Postgres, es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto, publicado bajo la licencia PostgreSQL,similar a la BSD o la MIT.",
+          icon: "mdi-database",
+          disabled: 0,
         }
       ];
   }
