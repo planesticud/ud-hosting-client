@@ -217,7 +217,42 @@ export default {
           description: "PostgreSQL, también llamado Postgres, es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto, publicado bajo la licencia PostgreSQL,similar a la BSD o la MIT.",
           icon: "mdi-database",
           disabled: 0,
-        }
+        },
+        {
+          text: "git",
+          value: "git",
+          description: "Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.",
+          icon: "mdi-github",
+          disabled: 0,
+        },
+        {
+          text: "kafka",
+          value: "kafka",
+          description: "Apache Kafka es un proyecto de intermediación de mensajes de código abierto desarrollado por LinkedIn y donado a la Apache Software Foundation escrito en Java y Scala. ",
+          icon: "mdi-arrow-right-bold-box",
+          disabled: 0,
+        },
+        {
+          text: "node",
+          value: "node",
+          description: "Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación JavaScript, asíncrono, con E/S de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google.",
+          icon: "mdi-nodejs",
+          disabled: 0,
+        },
+        {
+          text: "metabase",
+          value: "metabase",
+          description: "Metabase es una herramienta de inteligencia empresarial de código abierto. Metabase le permite hacer preguntas sobre sus datos y muestra respuestas en formatos que tienen sentido, ya sea un gráfico de barras o una tabla detallada.",
+          icon: "mdi-grid",
+          disabled: 0,
+        },
+        {
+          text: "ruby",
+          value: "ruby",
+          description: "Ruby es un lenguaje de programación interpretado, reflexivo y orientado a objetos, creado por el programador japonés Yukihiro Matz Matsumoto, quien comenzó a trabajar en Ruby en 1993, y lo presentó públicamente en 1995.",
+          icon: "mdi-shape-plus",
+          disabled: 0,
+        },
       ];
   }
 };
