@@ -1,8 +1,53 @@
 <template>
   <v-container>
     <div>
-      <h1>{{ title }}</h1>
+      <h1>{{ maintitle }}</h1>
+      <p></p>
+      <v-divider color="warning"></v-divider>
+      <p></p>
     </div>
+    <div class="container2">
+  <div class="icon-section">
+    <!-- Repite este bloque para cada icono -->
+    <div class="icon">
+      <img src="../../assets/images/Laboratorio_vulnerabilidades-06.png" alt="Dominio">
+      <div class="icon-text">
+        <h3>Dominio</h3>
+        <p>Escoja que tipo de ambiente sera local/nube.</p>
+      </div>
+    </div>
+    <div class="icon">
+      <img src="../../assets/images/Laboratorio_vulnerabilidades-05.png" alt="Dominio">
+      <div class="icon-text">
+        <h3>Servidor</h3>
+        <p>Escoja que tipo de ambiente sera local/nube.</p>
+      </div>
+    </div>
+    <div class="icon">
+      <img src="../../assets/images/Laboratorio_vulnerabilidades-07.png" alt="Dominio">
+      <div class="icon-text">
+        <h3>Proyecto</h3>
+        <p>Asigne un nombre para la simulación.</p>
+      </div>
+    </div>
+    <div class="icon">
+      <img src="../../assets/images/Laboratorio_vulnerabilidades-08.png" alt="Dominio">
+      <div class="icon-text">
+        <h3>Documentación</h3>
+        <p>Sigue las instrucciones que se generará para empezar la simulación.</p>
+      </div>
+    </div>
+    <!-- ... otros bloques de icono ... -->
+  </div>
+  <div class="image-section">
+    <img src="../../assets/images/Laboratorio_vulnerabilidades-04.png" alt="Mujer con laptop">
+  </div>
+</div>
+    <div>
+      <h1>{{ title }}</h1>
+      <v-divider color="warning"></v-divider>
+    </div>
+    <p></p>
     <div class="row row--dense">
       <div v-for="(button, index) in buttons" :key="index" class="col-sm-8 col-lg-4 col-12">
         <v-card outlined>
@@ -28,17 +73,23 @@
     <v-dialog v-model="dialog2" max-width="2000px">
       <v-card>
         <v-card-title>
-          <h2>Nuevo entorno vulnerable</h2>
+          <h2 style="color: #8B1919;">Nuevo entorno vulnerable</h2>
+
         </v-card-title>
+        <v-card-title>
+          <v-divider color="warning"></v-divider>
+
+        </v-card-title>
+         
         <v-card-text>
-          <v-select v-model="model.env" :items="buttons" item-text="text" item-value="value" label="entorno"></v-select>
+          <v-select v-model="model.env" :items="buttons" item-text="text" item-value="value" label="Dominio" outlined></v-select>
 
-          <v-select v-model="model.type" :items="types" :rules="[v => !!v || 'debe escoger un entorno']" label="Entorno"
-            required></v-select>
-          <v-text-field v-model="model.name" label="nombre" :rules="[v => !!v || 'debe escoger un nombre']"
-            required></v-text-field>
+          <v-select v-model="model.type" :items="types" :rules="[v => !!v || 'Este campo es obligatorio']" label="Servidor"
+            required  outlined></v-select>
+          <v-text-field v-model="model.name" label="Nombre" :rules="[v => !!v || 'Este campo es obligatorio']"
+            required  outlined></v-text-field>
 
-          <v-btn small color="success" @click="submit()"> Crear entorno </v-btn>
+          <v-btn  color="red"  outlined @click="submit()"> Crear entorno </v-btn>
           &nbsp;
           <div>
             <p></p>
@@ -60,8 +111,8 @@
           </div>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" text @click="dialog2 = false">
-            close
+          <v-btn color="gray" text @click="dialog2 = false" outlined>
+            Cerrar
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -80,6 +131,7 @@ export default {
       buttons: [],
       model: {},
       title: "Crear entorno vulnerable",
+      maintitle: "Laboratorio de vulnerabilidades",
       result: { state: false },
       formOptions: {
         validateAfterLoad: false,
@@ -339,4 +391,42 @@ fieldset {
 .panel-body {
   padding: 15px;
 }
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #E7E7E7;
+  }
+
+  .icon-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icon {
+    margin: 10px 0;
+  }
+
+  .icon img {
+    width: 50px; /* Ajusta según el tamaño de tus iconos */
+    height: auto;
+  }
+
+  .icon-text {
+    margin-left: 15px;
+  }
+
+  .image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
 </style>

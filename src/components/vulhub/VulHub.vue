@@ -1,6 +1,7 @@
 <template>
  <v-container>
    <div>
+    
     <h1  align="center" >{{ h1.text }}  <v-icon :title="title.text" >{{h1.icon}}</v-icon></h1>
     </div>
   <v-row align="center" class="list px-3 mx-auto">
